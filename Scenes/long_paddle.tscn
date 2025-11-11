@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b85e7v060gkfa"]
+
+[ext_resource type="Texture2D" uid="uid://bnoi506w0ynjp" path="res://Asssets/Map/TileSets/decorations.png" id="1_ar1hj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r776t"]
+size = Vector2(96, 6)
+
+[node name="LongPaddle" type="StaticBody2D"]
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_ar1hj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_r776t")
+one_way_collision = true
