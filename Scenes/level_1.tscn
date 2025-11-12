@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://s6t3appyh3hg"]
+[gd_scene load_steps=12 format=4 uid="uid://s6t3appyh3hg"]
 
 [ext_resource type="Script" uid="uid://co4pn01dwd21a" path="res://Scripts/level.gd" id="1_lsmp6"]
 [ext_resource type="Texture2D" uid="uid://c2rq578nfy0by" path="res://Asssets/Map/TileSets/Terrain (32x32).png" id="1_vk57k"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://wm0kpsdniu17" path="res://Scenes/short_paddle.tscn" id="3_7p6j4"]
 [ext_resource type="PackedScene" uid="uid://b85e7v060gkfa" path="res://Scenes/long_paddle.tscn" id="5_6444e"]
 [ext_resource type="PackedScene" uid="uid://bhcgxrr601a4m" path="res://Scenes/door.tscn" id="6_evi0p"]
-[ext_resource type="PackedScene" uid="uid://cn4bkouxpqnl0" path="res://Scenes/melee_enemy.tscn" id="8_xrdnt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8ffim"]
 texture = ExtResource("1_vk57k")
@@ -565,6 +564,3 @@ position = Vector2(1089, 317)
 
 [node name="LongPaddle2" parent="OneWayCollision" instance=ExtResource("5_6444e")]
 position = Vector2(964, 211)
-
-[node name="MeleeEnemy" parent="." instance=ExtResource("8_xrdnt")]
-position = Vector2(896, 456)

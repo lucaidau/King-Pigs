@@ -25,7 +25,7 @@ var is_hit: bool = false
 var invicible_time: float = 0.5
 
 func _ready() -> void:
-	
+	Deactive_hitbox()
 	pass
 
 # --- Movement system --- 
@@ -38,8 +38,8 @@ func _physics_process(delta: float) -> void:
 		Attack()
 		return
 	
-	if is_attacking:
-		return
+	#if is_attacking:
+		#can_move = false
 		
 	# Add the gravity.
 	if not is_on_floor():
@@ -97,17 +97,17 @@ func Do_Anim(anim_name: String) -> void:
 # --- Attack system ---
 func Attack() -> void:
 	is_attacking = true
-	
+	can_move = false
 	state = "attack"
 	Do_Anim("attack")
-	velocity.x = 0
-	
+	#velocity.x = 0
 	Active_hitbox()
 	
-	Deactive_hitbox()
-
 	await anim.animation_finished
+	Deactive_hitbox()
+	
 	is_attacking = false
+	can_move = true
 	state = "idle"
 
 func Active_hitbox() -> void:
@@ -119,7 +119,7 @@ func Deactive_hitbox() -> void:
 
 # --- Signal function
 func _on_attack_hit_box_body_entered(body: Node2D) -> void:
-	if body.is_in_group("enemies"):
+	if body.is_in_group("Enemies"):
 		if body.has_method("Take_damage"):
 			body.Take_damage(base_attack_damage)
 
